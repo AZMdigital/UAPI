@@ -1,0 +1,179 @@
+server:
+  port: '8100'
+
+spring:
+  application:
+    name: 'backend-service'
+  h2:
+    console:
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+  flyway:
+    enabled: 'true'
+    locations:
+      - classpath:/db/migration/generic
+      - classpath:/db/migration/h2
+    fail-on-missing-locations: true
+    out-of-order: true
+
+  jpa:
+    generate-ddl: 'false'
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: 'true'
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: 'true'
+    open-in-view: 'false'
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    jdbc-url: jdbc:h2:./target/flyway-test-db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;AUTO_SERVER=TRUE;
+    password: password
+    username: username
+  sql:
+    init:
+      encoding: UTF-8
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: ${KEYCLOAK_CLIENT_ID:}
+            client-secret: ${KEYCLOAK_CLIENT_SECRET:}
+            provider: keycloak
+        provider:
+          keycloak:
+            issuer-uri: ${KEYCLOAK_AUTH_ISSUER_URL:}
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_AUTH_ISSUER_URL:}
+  servlet:
+      multipart:
+        max-file-size: -1
+        max-request-size: -1
+
+  data:
+    mongodb:
+      database: ${MONGO_DB_NAME:mydb}
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+keycloak:
+  authServerUrl: ${KEYCLOAK_AUTH_SERVER_URL:}
+  realm: ${KEYCLOAK_REALM:AZM}
+  grantType: ${KEYCLOAK_GRANT_TYPE:}
+  clientId: ${KEYCLOAK_CLIENT_ID:}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:}
+  groups: ${KEYCLOAK_GROUPS:}
+
+apiHub:
+  applicationTag: ${API_HUB_APPLICATION_TAG:API_HUB}
+  enableGoogleSheetAuth: ${ENABLE_GOOGLE_SHEET_AUTH:false}
+  enable-whitelisting-ips: ${ENABLE_WHITELISTING_IPS:true}
+  whitelisted-ips: ${WHITELISTED_IPS:0:0:0:0:0:0:0:1, 127.0.0.1}
+
+attachment:
+  types:
+    application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+public-key:
+  types: ${PUBLIC_KEY_TYPES:application/x-x509-ca-cert, crt, cer, cert, pem, csr}
+
+notifications:
+  send-notifications: ${SEND_NOTIFICATIONS:false}
+  send-test: ${SEND_TEST_EMAIL:false}
+  send-test-email-to: ${SEND_TEST_EMAIL_TO:zaeem.nadeem@gmail.com}
+  dev-portal-url: ${DEV_PORTAL_URL:}
+  admin-portal-url: ${ADMIN_PORTAL_URL:}
+  operation-email: ${OPERATION_EMAIL:}
+  operation-mobile-number: ${OPERATION_MOBILE_NUMBER:}
+  finance-email: ${FINANCE_EMAIL:}
+  name: ${COMPANY_NAME:Azm Digital}
+  invoice-schedule: ${INVOICE_SCHEDULE:-}
+  mark-invoice-as-paid-schedule: ${MARK_INVOICE_PAID_SCHEDULE:-}
+  generate-invoice-schedule: ${GENERATE_INVOICE_SCHEDULE:-}
+  prepaid-update-consumption-schedule: ${PREPAID_UPDATE_CONSUMPTION_SCHEDULE:-}
+  mail:
+    from: ${NOTIFICATIONS_MAIL_FROM:-}
+    api-url: ${NOTIFICATIONS_MAIL_API-URL:}
+    api-key: ${NOTIFICATIONS_MAIL_API-KEY:-}
+
+integration:
+  base-url: ${APIHUB_INTEGRATION_SERVICE:http://localhost:8200}
+  deed-service: /v1/ministry-of-justice/deed/{deedNumber}/{idNumber}/{idType}
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude:
+    jmx:
+      exposure:
+        include: "*"
+        exclude:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoint:
+    env:
+      keys-to-sanitize:
+        - password
+        - secret
+        - key
+        - token
+        - ".credentials."
+        - "vcap_services"
+
+# Info Endpoint Configuration
+info:
+  app:
+    name: "@project.artifactId@"
+    version: "@project.version@"
+    java:
+      version: "@java.version@"
+
+
+
+company:
+  api-key:
+    validity: 15552000 #In seconds
+
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: DEBUG
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder: TRACE
+
+logging:
+  level:
+    org.springframework.boot.actuate: INFO
+
+app:
+  version: "@project.version@"
+
+
+sadad:
+  username: ${SADAD_USERNAME:}
+  password: ${SADAD_PASSWORD:}
+  environment: ${ENVIRONMENT:}
+
+oss:
+  endpoint: ${OSS_ENDPOINT:}
+  accessKeyId: ${OSS_ACCESS_KEY:}
+  accessKeySecret: ${OSS_SECRET_KEY:}
+  bucketName: ${OSS_BUCKET_NAME:}
+  directoryName: ${OSS_BUCKET_NAME:}
+
+
+encryption:
+  secret-key:

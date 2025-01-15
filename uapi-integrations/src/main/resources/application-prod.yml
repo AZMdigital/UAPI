@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      database: uapi-prod-db
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+integration:
+  logging: ${ENABLE_LOGGING:true}
+
+logging:
+  file:
+    path: /var/log/
+  file.name: production.log
+  level:
+    root: INFO
+    com.yourpackage: DEBUG

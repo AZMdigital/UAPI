@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .invoice-box {
+      margin: auto;
+      padding: 40px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      width: 800px;
+    }
+
+    .invoice-title {
+      font-size: 24px;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .invoice-details {
+      margin-top: 30px;
+    }
+
+    .invoice-details>p {
+      margin-bottom: 15px;
+    }
+
+    .invoice-table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+      padding: 10px;
+      border: 1px solid #eee;
+    }
+
+    .invoice-table th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .invoice-total {
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .invoice-total p {
+      margin-bottom: 5px;
+    }
+
+    .thank-you {
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+<div class="invoice-box">
+  <h1 class="invoice-title">Invoice Details</h1>
+  <p>Please proceed with the payment before [ payment date ].</p>
+  <p>Your invoice details are summarized as below, and you can find all related details by accessing - My Invoices - using the below URL:</p>
+  <p>[URL Link]</p>
+
+  <div class="invoice-details">
+    <p>Invoice Details:</p>
+    <p>Account Name: [Account name]</p>
+    <p>Due Month: [due month]</p>
+    <p>From [day month year] to [day month year]</p>
+    <p>Issue Date of Invoice: [day month year]</p>
+    <p>Invoice Number: [UAPI_Invoice Number]</p>
+    <p>Total Amount: [amount SAR]</p>
+    <p>Maximum Date to Pay: [day month year]</p>
+    <p>Total consumed transactions:[consumed transactions] Transactions</p>
+    <p>Package Remaining- Transactions: [remaining transactions] transactions</p>
+    <p>Consumed timing-In days :[consumed days] days</p>
+    <p>Package Remaining- In days: [remaining days] days</p>
+  </div>
+
+  <div class="invoice-table">
+    <p>Consumption Details:</p>
+    <table>
+      <thead>
+      <tr>
+        <th>Service Name</th>
+        <th>Success Requests</th>
+        <th>Failure Requests</th>
+        <th>Price of Success</th>
+        <th>Price of Failure</th>
+        <th>Total Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>[Service Name]</td>
+        <td>[number of success transactions]</td>
+        <td>[number of failure transactions]</td>
+        <td>[price of success] SAR</td>
+        <td>[price of failure] SAR</td>
+        <td>[total price] SAR</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="invoice-total">
+    <p>Total Invoice: [Total Invoice] SAR</p>
+  </div>
+
+  <p>If you need further details, please contact us at [Finance Email or Operation Email), [Operation Mobile Number or Finance Mobile Number].</p>
+  <p>Thank you,</p>
+  <p>Azm Digital/ UAPI Team</p>
+</div>
+</body>
+
+</html>

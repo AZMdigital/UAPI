@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: uapi-staging-db
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+integration:
+  logging: ${ENABLE_LOGGING:true}

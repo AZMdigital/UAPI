@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      database: uapi-dev-db
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+  devtools:
+    restart:
+      enabled: true
+integration:
+  logging: ${ENABLE_LOGGING:true}

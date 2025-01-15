@@ -1,0 +1,27 @@
+export const labels = {
+  rolesPermissions: "Roles and Permissions",
+  addRole: "Add Role",
+  editRole: "Edit Role",
+  viewRole: "View Role",
+  roleId: "ID",
+  roleName: "Name",
+  roleStatus: "Status",
+  cancel: "Cancel",
+  save: "Save",
+  active: "Active",
+  inActive: "Inactive",
+  rolePermissions: "Permissions",
+  searchRole: "Search Role",
+  cancelRoleConfirmation:
+    "Are you sure you want to cancel? Any unsaved changes to the role will be lost.",
+  roleDeleteConfirmation: "Are you sure you want to delete this role, ",
+  updateRole: "Update Role",
+  shouldNotBeBlank: "This field cannot be left blank",
+  maxRoleNameSize: "Role name max comprise 20 characters",
+  pleaseSelectOnePermission: "Please atleast select one permission",
+  roleAlreadyExist: "Role already exists",
+  selectRoleError: "Please select atleast one role",
+  permissionsPlaceHolder: "Select Permissions",
+  forbiddenText:
+    "Access denied! Sorry, you do not have permission to perform this operation.",
+};

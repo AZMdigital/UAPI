@@ -1,0 +1,36 @@
+export const PERMISSION_PACKAGE_VIEW = "Package View";
+export const PERMISSION_PACKAGE_ADD = "Package Add";
+export const PERMISSION_SERVICE_VIEW = "Service View";
+export const PERMISSION_SERVICE_EXPLORE = "Service Explore";
+export const PERMISSION_SERVICE_SUBSCRIBE = "Service Subscribe";
+export const PERMISSION_PROFILE_VIEW = "Profile View";
+export const PERMISSION_API_KEY_VIEW = "API Key View";
+export const PERMISSION_API_KEY_EDIT = "API Key Edit";
+export const PERMISSION_CONFIGURATION_VIEW = "Configuration View";
+export const PERMISSION_CONFIGURATION_EDIT = "Configuration Edit";
+export const PERMISSION_CONNECTIVITY_VIEW = "Connectivity View";
+export const PERMISSION_CONNECTIVITY_EDIT = "Connectivity Edit";
+export const PERMISSION_INVOICE_VIEW = "Invoice View";
+export const PERMISSION_INVOICE_EXPORT = "Invoice Export";
+export const PERMISSION_ROLE_VIEW = "Role View";
+export const PERMISSION_ROLE_ADD = "Role Add";
+export const PERMISSION_ROLE_EDIT = "Role Edit";
+export const PERMISSION_ROLE_DELETE = "Role Delete";
+export const PERMISSION_USER_ADD = "User Add";
+export const PERMISSION_USER_DELETE = "User Delete";
+export const PERMISSION_USER_EDIT = "User Edit";
+export const PERMISSION_USER_VIEW = "User View";
+export const PERMISSION_CONSUMPTION_VIEW = "Consumption View";
+export const PERMISSION_CONSUMPTION_EXPORT = "Consumption Export";
+export const PERMISSION_LOGS_VIEW = "Logs View";
+export const PERMISSION_LOGS_EXPORT = "Logs Export";
+export const PERMISSION_CUSTOM_HEADER_VIEW = "Custom Headers View";
+export const PERMISSION_CUSTOM_HEADER_EDIT = "Custom Headers Edit";
+export const PERMISSION_COMPANY_CALLBACK_CONFIG_VIEW =
+  "Company Callback Config View";
+export const PERMISSION_COMPANY_CALLBACK_CONFIG_EDIT =
+  "Company Callback Config Edit";
+export const SUB_ACCOUNT_VIEW = "Sub Account View";
+export const SUB_ACCOUNT_ADD = "Sub Account Add";
+export const SUB_ACCOUNT_EDIT = "Sub Account Edit";
+export const SUB_ACCOUNT_DELETE = "Sub Account Delete";

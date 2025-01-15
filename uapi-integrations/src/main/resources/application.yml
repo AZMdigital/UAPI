@@ -1,0 +1,82 @@
+app:
+  version: "@project.version@"
+
+server:
+  port: '8200'
+
+spring:
+  application:
+    name: 'integrations-service'
+  data:
+    mongodb:
+      database: mydb
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+backend:
+  service:
+    base-url: ${APIHUB_BACKEND_SERVICE:https://dev-backend.uapi.sa/}
+    service-head-info: v1/service-heads
+    service-info: v1/service
+    api-key-validate: /v1/companies/api-key/validate
+    public-key-info: /v1/public-key/{id}
+    company-configuration: /v1/company-configuration/{id}
+    service-provider-logging: /v1/logging/{companyId}/{serviceProviderId}
+    request-log: /v1/request-log
+    service-callback: /v1/service-callback
+    service-callback-by-transaction: /v1/service-callback/{transactionId}
+    callback-config: /v1/callback-config/account/{companyId}/service/{serviceId}
+    company-packages: /v1/companies/{id}/integration-selected-packages
+    packages: /v1/packages/integration/{id}
+    consumption-count: /v1/consumption/{companyId}/{serviceId}
+    update-package-consumption: /v1/companies/selected-packages/{packageId}
+    send-consumption-alert: /v1/consumption-usage/alert/{companyId}
+    service-credentials: v1/service-providers/{serviceProviderId}/credentials
+    service-head-credentials: v1/service-providers/{serviceProviderId}/service_head/{serviceHeadId}/credentials
+    system-credentials: v1/service-providers/{serviceProviderId}/system-credentials
+    service-head-system-credentials: v1/service-providers/{serviceProviderId}/service_head/{serviceHeadId}/system-credentials
+    company-services-subscribed: v1/companies/{companyId}/services/{serviceId}
+    is-subscribed-service-head: v1/companies/{companyId}/service-heads/{serviceHeadId}/is-subscribed
+    company-custom-headers: v1/custom-header/company/{companyId}
+    service-consumption-history: v1/consumption/{companyId}/{serviceId}
+    service-consumption-history-count: v1/consumption/history/{companyId}/{serviceId}
+    service-consumption-from-history: v1/consumption/history/consumption-amount/{companyId}/{serviceId}
+
+
+notifications:
+  send-consumption-notifications: ${SEND_CONSUMPTION_NOTIFICATIONS:true}
+
+# Actuator Configuration
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude:
+    jmx:
+      exposure:
+        include: "*"
+        exclude:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoint:
+    env:
+      keys-to-sanitize:
+        - password
+        - secret
+        - key
+        - token
+        - ".credentials."
+        - "vcap_services"
+
+# Info Endpoint Configuration
+info:
+  app:
+    name: "@project.artifactId@"
+    version: "@project.version@"
+    java:
+      version: "@java.version@"

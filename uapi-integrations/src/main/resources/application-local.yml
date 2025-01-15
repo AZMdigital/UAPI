@@ -1,0 +1,3 @@
+swagger:
+  server:
+    url : ${APIHUB_INTEGRATIONS_SERVICE:http://localhost:8200}

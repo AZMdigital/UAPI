@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/config/*": ["src/config/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/core/*": ["src/modules/_core/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/playlist/*": ["src/modules/playlist/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/rest/*": ["src/api/rest/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/modules/*": ["src/modules/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/pages/*": ["pages/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/public/*": ["public/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/state/*": ["src/state/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/styles/*": ["src/styles/*"],
+      // eslint-disable-next-line jsonc/key-name-casing
+      "~/utils/*": ["src/utils/*"],
+      "react": ["./node_modules/@types/react"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

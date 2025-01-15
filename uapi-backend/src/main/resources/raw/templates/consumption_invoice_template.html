@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .invoice-box {
+            margin: auto;
+            padding: 40px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            width: 800px;
+        }
+
+        .invoice-title {
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .invoice-details {
+            margin-top: 30px;
+        }
+
+        .invoice-details>p {
+            margin-bottom: 15px;
+        }
+
+        .invoice-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .invoice-table th,
+        .invoice-table td {
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+
+        .invoice-table th {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .invoice-total {
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .invoice-total p {
+            margin-bottom: 5px;
+        }
+
+        .thank-you {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice-box">
+    <h1 class="invoice-title">Invoice Details</h1>
+    <p>Please proceed with the payment before <span style="color: red;">[payment_date]</span>.</p>
+    <p>Your invoice details are summarized as below, and you can find all related details by accessing - My Invoices - using the below URL:</p>
+    <p><span style="color: red;">[url_link]</span></p>
+
+    <div class="invoice-details">
+        <p><b>Invoice Details:</b></p>
+        <p><b>Account Name:</b> [account_name]</p>
+        <p><b>Due Month:</b> [due_month]</p>
+        <p><b>From</b> [from_date] <b>to</b> [to_date]</p>
+        <p><b>Issue Date of Invoice:</b> [issue_date]</p>
+        <p><b>Invoice Number:</b> [invoice_number]</p>
+        <p><b>Total Amount:</b> [total_amount] SAR</p>
+        <p><b>Maximum Date to Pay:</b> [max_pay_date]</p>
+        <p><b>Total consumed transactions:</b> [consumed_transactions] Transactions</p>
+        <p><b>Package Remaining-Transactions:</b> [remaining_transactions] transactions</p>
+    </div>
+    <br>
+    <div class="invoice-table">
+        <p><b>Consumption Details:</b></p>
+        <table>
+            <thead>
+            <tr>
+                <th><span style="color: steelblue;">Service Code</span></th>
+                <th><span style="color: steelblue;">Service Name</span></th>
+                <th><span style="color: steelblue;">Success Requests</span></th>
+                <th><span style="color: steelblue;">Failure Requests</span></th>
+                <th><span style="color: steelblue;">Total Requests</span></th>
+                <th><span style="color: steelblue;">Total Price</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            [dynamic_rows_placeholder]
+            </tbody>
+        </table>
+    </div>
+
+    <p><span style="color: steelblue;"><b>Total Invoice:</b> [total_invoice] SAR</span></p>
+    <br>
+    <p>If you need further details, please contact us at <span style="color: red;">[finance_email] or [operation_email], [operation_mobile_number] or [finance_mobile_number].</span></p>
+    <p>Thank you,</p>
+    <p>Azm Digital/ UAPI Team</p>
+</div>
+</body>
+
+</html>

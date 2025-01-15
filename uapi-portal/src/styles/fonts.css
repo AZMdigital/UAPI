@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Din Alternate";
+  src: url("../../public/fonts/din-alternate-cufonfonts/DINAlternate-Bold.ttf")
+    format("truetype");
+  /* Add other font formats here if needed */
+}
+
+@font-face {
+  font-family: "Script Mt Bold";
+  src: url("../../public/fonts/script-mt-bold-font/SCRIPTBL.TTF")
+    format("truetype");
+  /* Add other font formats here if needed */
+}
+
+@font-face {
+  font-family: "Frutiger";
+  src: url("../../public/fonts/frutiger-cufonfonts/Frutiger.ttf")
+    format("truetype");
+  /* Add other font formats here if needed */
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../public/fonts/montserrat-light_mVszM/Montserrat Light/MontserratLight.otf")
+    format("truetype");
+  /* Add other font formats here if needed */
+}
+
+@font-face {
+  font-family: "SegoeUI";
+  src: url("../../public/fonts/segoe-ui-4-cufonfonts/SegoeUI.ttf") format("truetype");
+  /* Add other font formats here if needed */
+}

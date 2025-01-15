@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "dictionaryDefinitions": [
+    {
+      "name": "Project Dictionary",
+      "path": "./.cspell/project.txt",
+      "addWords": true
+    },
+    {
+      "name": "Temp Dictionary",
+      "path": "./.cspell/temp.txt",
+      "addWords": true
+    }
+  ],
+  "ignoreWords": ["Totp", "Electromatic", "firstname"],
+  "dictionaries": ["Project Dictionary", "Temp Dictionary"],
+  "ignorePaths": [
+    "node_modules",
+    ".cspell/project.txt",
+    ".cspell/temp.txt",
+    "ecs-deploy",
+    "k8s-deploy",
+    ".yarn",
+    ".next",
+    ".husky",
+    ".vscode"
+  ]
+}

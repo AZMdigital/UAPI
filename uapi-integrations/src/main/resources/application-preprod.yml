@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      database: uapi-preprod-db
+      uri: ${MONGO_DB_URI:mongodb://localhost:27017}
+
+logging:
+  file:
+    path: /var/log/
+  file.name: production.log
+  level:
+    root: INFO
+    com.yourpackage: DEBUG
